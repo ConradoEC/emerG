@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../emerG/assets/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <link rel="shortcut icon" href="../emerG/assets/img/favicon_g1.png" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <title>emerG - Perfil</title>
+    </head>
+
+    <body>
+        <header class="header solid" id="header">
+            <div class="header-items">
+                <div class="logos">
+                    <a href="../Inicio/index.html" class="emerg-logo"><img src="../emerG/assets/img/logo_emerg-branca.png" alt="Logo da emerG"></a>
+                    <a href="https://www.eteccarapicuiba.com.br/" target="_blank" class="etec-logo"><img src="../emerG/assets/img/logo_etec-branca.png" alt="Logo da Etec de Carapicuíba"></a>
+                </div>
+                <div class="links">
+                  <ul class="links-list">
+                    <li><a href="../Inicio/index.html" class="link">Início</a></li>
+                    <li><a href="../Localizar/index.html" class="link">Localizar</a></li>
+                    <li><a href="../Ajudar/index.html" class="link">Ajudar</a></li>
+                </ul>  
+                </div>
+                <div class="login">
+                    <button id="headerBtnLogin" class="login-btn">Sair</button>
+                    <div id="userImage" class="userImageActive"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <aside class="space_side">
+                <div class="aside_perfil" id="aside_perfil">
+                    <div id="aside_post_perfil"><img src="" alt="" id="aside_post_perfil_img"></div>
+                    <i id="post_arroba" class=""></i>
+                    <div id="btnPerfilType" class="btnPerfilType"></div>
+                </div>
+
+                <div class="aside_informations" id="aside_informations">                    
+                    <div class="aside_informations_post_drop" id="aside_informations_donate">
+                        <i id="aside_donate" class="bi bi-bell"></i>
+                        <span class="aside_description">Notificações</span>
+                    </div>
+                </div>
+
+                <div class="main_sectionHeader" id="main_sectionHeader">
+                    <div class="main_sectionHeader_content"><i class="bi bi-person-circle main_sectionHeaderIcon main_sectionHeaderIcon_actived"></i><span class="headerIconText">Perfil</span></div>
+                    <div class="main_sectionHeader_content"><i class="bi bi-clipboard2-check main_sectionHeaderIcon"></i><span class="headerIconText">Voluntariado</span></div>
+                    <div class="main_sectionHeader_content"><i class="bi bi-pie-chart main_sectionHeaderIcon"></i><span class="headerIconText">Estatísticas</span></div>
+                    <div class="main_sectionHeader_content"><i class="bi bi-box2-heart main_sectionHeaderIcon"></i><span class="headerIconText">Doação</span></div>
+                </div>
+
+                <div class="content_asideDonateModal" id="content_asideDonateModal">
+                    <div class="background_asideDonateModal"></div>
+                    <div class="asideDonateModal" id="asideDonateModal">
+                        <!-- <i id="asideDonateModal_back" class="bi bi-box-arrow-left"></i> -->
+                        <i id="asideDonateModal_close" class="bi bi-x-circle"></i>
+                        
+                        <div class="contentPayment " id="contentPayment">
+                            <div class="contentPayment_payment contentPayment_payment_hover"><img src="../emerG/assets/img/logoPix.png" id="pix"></div>
+                            <!-- <div class="contentPayment_payment contentPayment_payment_hover" id="contentPayment_paymentCards">
+                                <div class="content_card"><img src="../emerG/assets/img/cartaoCredito.png" class="cards cardCredit" id="cardCredit"></div>
+                                <div class="content_card"><img src="../emerG/assets/img/cartaoDebito.png" class="cards cardDebit" id="cardDebit"></div>
+                            </div> -->
+                        </div>
+
+                        <div class="content_pixKey" id="content_pixKey">
+                            <div class="content_pixKeyCode"><i class="bi bi-link-45deg"></i><span id="pixKeyCode">wdgaefgqgg2345h6945</span></div>
+                            <div class="content_pixKeyQrcode">
+                                <img src="" id="pixKeyQrcode">
+                                <div class="informationsPix">
+                                    <p>sddsvsdsvsv</p>
+                                    <p>svsvsvvssvs</p>
+                                    <p>svsvsvvsvsvs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="content_cards" id="content_cards">
+                            <div class="content_cardsOptions">
+                                <div class="cardsOptions"></div>
+                                <div class="cardsOptions"></div>
+                                <div class="cardsOptions"></div>
+                                <div class="cardsOptions"></div>
+                            </div>
+
+                            <form class="formsInformations_card" id="informations_card">
+                                <h1 class="titleFormsInformations" id="titleFormsInformations">Crédito</h1>
+                                <label for="inputInformations_card" class="labelInformations_card">Nome do titular</label>
+                                <input type="text" class="inputInformations_card">
+                                <label for="inputInformations_card" class="labelInformations_card">Número do cartão</label>
+                                <input type="number" class="inputInformations_card">
+                                <div class="contentInformations_card">
+                                    <div>
+                                        <label for="inputInformations_card" class="labelInformations_card">Validade</label>
+                                        <input type="text" class="inputInformations_card">
+                                    </div>
+                                    <div>
+                                        <label for="inputInformations_card" class="labelInformations_card">CVV</label>
+                                        <input type="text" class="inputInformations_card">
+                                    </div>
+                                </div>
+                                <label for="inputInformations_card" class="labelInformations_card">CPF do titular</label>
+                                <input type="text" class="inputInformations_card">
+                            </form>
+
+                            <button id="btnInformations_card">Finalizar</button>
+                        </div> -->
+                    </div>
+                </div>
+            </aside>
+
+            <section id="main_section">
+                <div class="main_sectionBody" id="main_sectionBody">
+                    <div class="perfil_content shownHidden">
+                        <ul class="ul_perfil">
+                            <li class="li_perfil">
+                                <div class="perfil_informations">
+                                    <img src="" id="perfil_informations_image" class="perfil_informations_image">
+                                    <div>
+                                        <span class="perfil_informations_span" id="perfilName"></span>
+                                        <span class="perfil_informations_span" id="perfilEmail"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="li_perfil">
+                                <span class="material-symbols-outlined" id="ong_informations_local_icon">location_on</span><span class="perfil_leg" id="perfilAddress"></span>
+                            </li>
+                            <li class="li_perfil">
+                                <span class="material-symbols-outlined" id="ong_informations_phone_icon">call</span><span class="perfil_leg" id="perfilPhone"></span>
+                            </li>
+                            <li class="li_perfil">
+                                <span class="material-symbols-outlined" id="ong_informations_id_icon">apartment</span><span class="perfil_leg" id="perfilId"></span>
+                            </li>
+                            <!-- <li class="li_perfil">
+                                <span class="material-symbols-outlined" id="ong_informations_link_icon">link</span><span class="perfil_leg">Link</span><span id="perfil_link"></span>
+                            </li>  -->
+                        </ul>
+
+                        <div class="perfil_contentVisitor" id="perfil_contentVisitor">
+                            <div class="content_achievement">
+                                <div class="someAchievement" id="someAchievementVisitor">
+                                    <p class="achievementText"></p>
+    
+                                    <div class="content_achievementProgress">
+                                        <p class="achievementProgressText"></p>
+                                        <div class="achievementProgress"></div>
+                                    </div>
+    
+                                    <div class="content_achievementProgress">
+                                        <div><hr>🥺</div>
+                    
+                                        <div>😍<hr></div>
+                                    </div>
+                                </div>
+                                <button class="helpAchievementVisitor">Contribuir</button>
+                            </div>
+
+                            <div class="content_donateMoneyEvaluate">
+                                <!-- <div class="donateMoney">
+                                    <h1 class="donateMoneyEvaluateH1">Ajude com a quantia que puder!</h1>
+                                    <i id="donateMoneyCoin" class="bi bi-coin"></i>
+                                </div>
+        
+                                <hr id="donateMoneyEvaluateHr"> -->
+
+                                <div class="evaluate">
+                                    <h1 class="donateMoneyEvaluateH1">Avalie a nossa ONG!</h1>
+                                    <div class="content_stars" id="content_stars">
+                                        <i class="bi bi-star content_stars_bi" onclick="clickStar()" id="1"></i>
+                                        <i class="bi bi-star content_stars_bi" onclick="clickStar()" id="2"></i>
+                                        <i class="bi bi-star content_stars_bi" onclick="clickStar()" id="3"></i>
+                                        <i class="bi bi-star content_stars_bi" onclick="clickStar()" id="4"></i>
+                                        <i class="bi bi-star content_stars_bi" onclick="clickStar()" id="5"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content_LikesFollowers">
+                                <div class="contentLike">
+                                    <i id="contentLike_icon" class="bi bi bi-heart"></i>
+                                    <div id="contentLike_div"><span class="contentLikeFollow_span"></span></div>
+                                </div>
+                                <div class="contentFollow">
+                                    <button id="contentFollow_btn">Seguir</button>
+                                    <div id="contentFollow_div"><span class="contentLikeFollow_span"></span></div>
+                                </div>
+                            </div>
+
+                            <div class="helpDonate" id="helpDonate">
+                                <div class="helpDonateBackground"></div>
+                                <div class="helpDonateContent">
+                                    <i id="helpDonateContent_close" class="bi bi-x-circle"></i>
+                                    <h1>Indique a quantidade que possa doar</h1>
+                                    <input type="text" id="helpDonateContent_input">
+                                    <button id="helpDonateContent_btn">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main_volunteers shownHidden">
+                        <h1>Voluntários</h1>
+
+                        <div class="content_volunteers" id="content_volunteers">
+                            <div class="box_volunteer" id="createVolunteers">
+                                <div class="volunteer volunteerFirst">
+                                    <i class="bi bi-plus-circle volunteerAdd"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="box_volunteer">
+                                <div class="volunteer">
+                                    <h1 class="volunteerTitle">Segurança</h1>
+                                    <ul>
+                                        <li class="volunteerRequire">Estar vivo</li>
+                                        <li class="volunteerRequire">Atuar dentro da atuação</li>
+                                        <li class="volunteerRequire">não encher o saco</li>
+                                    </ul>
+                                    <p class="volunteerDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto officiis, voluptas corrupti suscipit accusantium dolorum asperiores ad ducimus voluptate unde modi est aliquam distinctio officia. Fugit placeat quas harum sequi!</p>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div id="modal_volunteer" class="modal_volunteer">
+                            <div class="modal_volunteerBackground"></div>
+
+                            <div class="modal_volunteerForms">
+                                <i id="modal_volunteerForms_close" class="bi bi-x-circle"></i>
+                                <h2>Qual será a função do voluntário?</h2>
+                                <!-- <h3>Escreve a função ou selecione uma das opções!</h3> -->
+                                <div class="modal_volunteerForms_contentFunction">
+                                    <input type="text" id="modal_volunteerForms_functionInput">
+                                    <!-- <select name="" id="modal_volunteerForms_functionSelect">
+                                        <option value=""></option>
+                                    </select> -->
+                                </div>
+                                <h2>Quais são os requisitos para essa função?</h2>
+                                <div class="modal_volunteerForms_contentRequests" id="modal_volunteerForms_contentRequests">
+                                    <input type="text" class="modal_volunteerForms_requestInput" oninput="inputsClick()">
+                                </div>
+                                <h2>Coloque uma descrição da vaga.</h2>
+                                <textarea name="modal_volunteerForms_description" id="modal_volunteerForms_description" multiline></textarea>
+                                <div class="modal_volunteerForms_contentButton">
+                                    <button id="modal_volunteerForms_button">Criar vaga</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalView_volunteer" class="modalView_volunteer">
+                            <div id="modalView_volunteerBackground"></div>
+                            <div id="modalView_content">
+                                <i id="modalView_close" class="bi bi-x-circle"></i>
+                                <h1 id="modalView_contentH1">oooooooooooooo</h1>
+                                <div>
+                                    <ul id="modalView_contentRequests">
+                                    </ul>
+                                </div>
+                                <div class="modalView_contentDescription">
+                                    <p id="modalView_Description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi provident incidunt quaerat at odit alias ea nulla optio voluptatibus nobis magni nesciunt deleniti suscipit repudiandae, ab quae dignissimos laudantium? Minus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati provident fugit dolorum. Cumque ab, repudiandae soluta architecto tempora vero nostrum molestiae. Rem eligendi id non, qui sit libero impedit magni. lo Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore eligendi similique fugiat nobis facere maxime saepe. Dolore, aliquam ullam. Nemo architecto dignissimos officiis eveniet consequatur harum velit a veritatis fugit!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main_statistics shownHidden">
+                        <h1>Estatísticas</h1>
+
+                        <div class="content_statistics">
+                    
+                            <div class="content_socialMediaFollow">
+                                <div class="content_followerStatistics">
+                                    <span class="content_follower_span" id="content_follower_span"></span>
+                                    <div class="followerStatistics" id="followerStatistics">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="content_followingStatistics">
+                                    <span class="content_followingStatistics_span" id="content_followingStatistics_span">Seguindo (50)</span>
+                                    <div class="followingStatistics" id="followingStatistics">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <hr class="content_statistics_hr">
+
+                            <div class="content_likes">
+                                <div class="content_totalLikes" id="content_totalLikes">
+                                    <h1>Curtidas</h1>
+                                    <p><b>Curtidas totais:</b> 123</p>
+                                </div>
+                            </div>
+                    
+                            <hr class="content_statistics_hr">
+
+                            <div class="content_feedback">
+                                <h1>Avaliação</h1>
+                                <div class="content_feedbackInformations" id="content_feedbackInformations">
+                                    <span><b>Em média:</b> 3,5 estrelas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal_achievement" id="modal_achievement">
+                            <div class="modalAchievement_background"></div>
+                            <div class="modalAchievement_content">
+                                <i id="modal_achievementForms_close" class="bi bi-x-circle"></i>
+                                <div class="modalAchievement_content_content">
+                                    <div class="category">
+                                        <label for="inputCategory">Escolha ou digite uma categoria</label>
+                                        <input type="text" name="inputCategory" id="inputCategory">
+                                        <div class="categoryExamples">
+                                        </div>
+                                    </div>
+                                    <div class="quantivity">
+                                        <label for="InputQuantivity">Escolha ou digite a quantidade</label>
+                                        <input type="number" name="inputQuantivity" id="inputQuantivity">
+                                        <div>
+                                            <span id="inputQuantivity_span"></span>
+                                            <input type="range" min="0" max="10000" id="inputQuantivity_range">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="sendMeta">Criar meta</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_donate shownHidden">
+                        <h1>Doações</h1>
+
+                        <div class="content_achievement">
+                            <div class="noAchievement" id="noAchievement">
+                                <p>Ainda não criou uma meta para ser atingida? Crie agora:</p>
+                                <i class="bi bi-plus-circle achievementAdd" id="achievementAdd"></i>
+                            </div>
+
+                            <div class="someAchievement" id="someAchievement">
+                                <p class="achievementText"></p>
+
+                                <div class="content_achievementProgress">
+                                    <p class="achievementProgressText"></p>
+                                    <div class="achievementProgress"></div>
+                                </div>
+
+                                <div class="content_achievementProgress">
+                                    <div><hr>🥺</div>
+                
+                                    <div>😍<hr></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <aside class="space_side"></aside>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="team-sec">
+                    <ul class="team-list">
+                        <li class="member-tit">Time</li>
+                        <li class="member">Ana Souza</li>
+                        <li class="member">Erick Conrado</li>
+                        <li class="member">Felipe Prado</li>
+                        <li class="member">Giovanna Jesus</li>
+                        <li class="member">Isabella Jesus</li>
+                    </ul>
+                </div>
+                <div class="map-sec">
+                    <p class="map-tit">Mapa de Site</p>
+                    <div class="map-list">
+                        <div class="list">
+                            <a href="../Inicio/index.html">Início</a>
+                            <ul>
+                                <li><a href="">Time</a></li>
+                                <li><a href="">Objetivos</a></li>
+                                <li><a href="">Valores</a></li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <a href="../Localizar/index.html">Localizar</a>
+                        </div>
+                        <div class="list">
+                            <a href="../Ajudar/index.html">Ajudar</a>
+                        </div>
+                        <div class="list">
+                            <a href="../Entrar/index.html">Entrar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-sec">
+                    <p class="contact-tit">Contato</p>
+                    <ul class="contact-icons">
+                        <li class="contact"><a href="https://instagram.com/emergoficial" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                        <li class="contact"><a href="mailto:emergresponde@gmail.com?subject=Contato%20-%20emerG&body=Olá%2C%20quero%20falar%20sobre%20o%20projeto..."><i class="bi bi-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-span">
+                    <span>Trabalho de Conclusão de Curso desenvolvido para a Etec de Carapicuíba sob a orientação do Professor Wesley Castanha.</span>
+                </div>
+        </footer>
+
+        <script src="script.js" defer></script>
+        <script src="../emerG/assets/js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PARTE NÃO ENVIADA PRO FELIPE -->
+
+<!-- FOI CRIADO UM MODAL PARA VISUALIZAÇÃO DA FICHA DAS VAGAS DE VOLUNTÁRIO -->
+
+<!-- FOI ADICIONADO UM onclick="clickStar()" NOS content_stars_bi -->
