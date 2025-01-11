@@ -1,0 +1,759 @@
+body{
+    overflow-x: hidden;
+}
+
+.section{
+    width: 100%;
+    height: auto;
+}
+
+.choose{
+    background: #e7f4ff;
+    height: auto;
+    padding: 25px;
+}
+
+.choose_searchBarFilter{
+    display: flex;
+    align-items: center;
+}
+
+.showFilter{
+    background: #a0d3ff;
+    padding: 6px 8px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    user-select: none;
+}
+
+#showFilter_icon{
+    background-color: #7bbbf9;
+    color: #328cec;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.showFilter p{
+    margin: 0 8px;
+    font-size: max(1.3rem);
+    color: #fff;
+}
+
+.choose_searchBarFilter_content{
+    position: relative;
+}
+
+.choose_searchBarFilter_searchBar{
+    height: 3rem;
+    width: 15rem;
+    outline: none;
+    border: none;
+    padding: 0px 0px 0px 45px;
+    background: #a0d3ff;
+    font-size: 1rem;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    caret-color: #0d74e5;
+    transition: .2s;
+}
+
+#choose_searchBarFilter_searchBar_icon{
+    position: absolute;
+    left: 0;
+    color: #0d74e5;
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translate(50%, -50%);
+    user-select: none;
+}
+
+.choose_searchBarFilter_contentOptions{
+    position: relative;
+    width: auto;
+    display: none;
+    justify-content: center;
+}
+
+.contentOptions_options{
+    background-color: #e7f4ff;
+    top: 45px;
+    width: auto;
+    left: 0;
+    position: absolute;
+    padding: 16px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 20px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.contentOptions_options_option{
+    border-radius: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 12px 8px 8px;
+    transition: .2s;
+    text-wrap: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.contentOptions_options_option:hover{
+    background: #a0d3ff;
+}
+
+.contentOptions_options_img{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    border-radius: 100%;
+}
+
+.contentOptions_options_name{
+    font-size: 1.2rem;
+}
+
+#choose_searchBarFilter_filter{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: none;
+    background: #7bbbf9;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 20px;
+    user-select: none;
+}
+
+.choose_buttonAddMarker{
+    background: #a0d3ff;
+    border: none;
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 50px;
+    height: 3rem;
+    font-size: 1.2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.formsAddMarker{
+    background-color: #328cec;
+    padding: 30px 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 40vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 60vh;
+    border-radius: 26px;
+    user-select: none;
+    top: 100px;
+}
+
+.formsAddMarker::-webkit-scrollbar{
+    display: none;
+}
+
+.formsAddMarker_content_btnClose{   
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.formsAddMarker_btnClose{
+    font-size: 2em;
+    cursor: pointer;
+    color: #fff;
+}
+
+.formsAddMarker_title{
+    margin-top: 25px;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.formsAddMarker_contentInput{
+    display: flex;
+    flex-direction: column;
+}
+
+.formsAddMarker_label{
+    width: fit-content;
+    padding: 5px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.formsAddMarker_input{
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 30px;
+    width: max(30vw, 50vh);
+}
+
+.formsAddMarker_input:nth-last-child(1){
+    padding: 0;
+    margin-bottom: 0px;
+    cursor: pointer;
+    accent-color: #7bbbf9;
+}
+
+.miniMap_title{
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+.miniMap_content{
+    width: 90%;
+    height: 20vw;
+    min-height: 40vh;
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+}
+
+.miniMap{
+    background: #e7f4ff;
+    height: 120%;
+    width: 120%
+}
+
+.formsAddMarker_icons{
+    color: rgba(0, 0, 0, 0.515);
+    font-size: max(2vw, 20px);
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    transition: color .2s ease;
+}
+
+#formsAddMarker_CreateMiniMap::before{
+    display: var(--MiniMapDisplay1, block);
+}
+
+#formsAddMarker_ReloadMiniMap::before
+{
+    display: var(--MiniMapDisplay2, none);
+}
+
+.formsAddMarker_icons:hover
+{
+    color: #0d74e5;
+    cursor: pointer;
+}
+
+.nameAuthorization_content
+{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+}
+
+.nameAuthorization_text
+{
+    text-align: justify;
+}
+
+.nameAuthorization_content_contentInput
+{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+}
+
+.nameAuthorization_content_contentInput div
+{
+    background: #7bbbf9;
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: flex;
+    font-size: 1.2rem;
+    gap: 10px;
+    align-items: center;
+}
+
+.nameAuthorization_content_contentInput div input{
+    cursor: pointer;
+    accent-color: #0d74e5;
+}
+
+#btnAddNewMarker
+{
+    padding: 10px;
+    color: white;
+    background: transparent;
+    border-radius: 100px;
+    border: none;
+    font-size: 1.25rem;
+}
+
+
+.map_content
+{
+    width: 100%;
+    padding: 23px 0px;
+    position: relative;
+}
+
+.map_content_space
+{
+    min-height: 60vh; 
+    margin-bottom: 20px;
+}
+
+.map{
+    background-color: transparent;
+    width: 97.5%;
+    height: 60vh;
+    margin: auto;
+    border-radius: 10px;
+    transition: .4s;
+    position: absolute;
+    top: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+#mapWater{
+    top: -20%;
+    background-color: rgb(119, 157, 255);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.change_map{
+    padding: 0px 0px 0px 20px;
+}
+
+.switch_content{
+    padding: 0.7vw;
+    box-sizing: content-box;
+    background-color: #e7f4ff;
+    width: 6%;
+    height: 20px;
+    position: relative;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#switch_circle{   
+    background-color: #a0d3ff;
+    width: 1.5vw;
+    height: 1.5vw;
+    position: absolute;
+    border-radius: 100%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: 80%;
+    transition: .4s;
+    z-index: 1;
+}
+
+#switch_circle_shadowRight, #switch_circle_shadowLeft{
+    border: 1px solid #7bbbf9;
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: 80%;
+    border-radius: 100%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+#switch_circle_shadowRight{
+    right: 20%;
+}
+
+.markersAnimation{
+    background-color: blue;
+    opacity: 0.4;
+    animation: littleAnimation 0.5s infinite ease-in-out;
+}
+
+@keyframes littleAnimation {
+    0%
+    {
+        transform: translateY(0%);
+    }
+    50%
+    {
+        transform: translateY(-20%);
+    }
+    100%
+    {
+        transform: translateY(0%);
+    }
+}
+
+.markerContent{
+    background-color: rgb(50, 141, 141);
+    display: flex;
+    margin-bottom: 10px;
+    padding: 7px 0px 7px 7px;
+    gap: 10px;
+}
+
+.markerContent_img{
+    width: 7vw;
+    height: 7vw
+}
+
+.markerContent_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.info_name{
+    font-size: 1.5em;
+}
+
+.info_email{
+    font-size: 1.5em;
+}
+
+.info_address{
+    font-size: 1.5em;
+    width: 200%;
+    background-color: aquamarine;
+}
+
+.markerDescription{
+    background-color: blue;
+}
+
+.markerDescription_description{
+    font-size: max(0.7vw, 20px);
+}
+
+#filterDiv{
+    background-color: #328cec;
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 26px;
+    position: absolute;
+    height: fit-content;
+    user-select: none;
+    overflow-y: scroll;
+    top: 100px;
+}
+
+#filterDiv::-webkit-scrollbar{
+    display: none;
+}
+
+.filterText{
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+#filterForms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.filterForms_closeButton{
+    color: #e7f4ff;
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.filterForms_Label{
+    margin-bottom: -25px;
+    font-size: 1.2rem;
+    width: 76%;
+    color: #fff;
+}
+
+.filterForms_Input{
+    width: 80%;
+    height: 30px;
+    border-radius: 16px;
+    padding: 0px 10px;
+    font-size: max(1.1vw, 15px);
+    outline: none;
+    border: none;
+}
+
+.select_options{
+    color: #328cec;
+    background-color: #e7f4ff;
+    font-size: 1rem;
+    border: none;
+}
+
+.options{  
+    color: #328cec; 
+    background-color: #e7f4ff;
+    font-size: 1rem;
+}
+
+#filterForms_Input_quantivity::-webkit-outer-spin-button, #filterForms_Input_quality::-webkit-outer-spin-button, #filterForms_Input_quality::-webkit-inner-spin-button, #filterForms_Input_quantivity::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.contentStars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e7f4ff;
+    width: 76%;
+    border-radius: 50px;
+}
+
+.contentStars_star{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d74e5;
+    border: 1px solid none;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 40px;
+    width: 50px;
+    transition: 1s content;
+}
+
+.contentStars_star::before{
+    content: '\2606';
+}
+
+.contentStars_star.ativo ~ .contentStars_star::before{
+    content: '\2606';
+}
+
+.contentStars:hover .contentStars_star::before{
+    content: '\2605';
+}
+
+.contentStars_star:hover ~ .contentStars_star::before{
+    content: '\2606';
+}
+
+.sla::before{
+    content: '\2605'
+}
+
+.filterForms_buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.formsButton{
+    border-radius: 50px;
+    font-size: 1.2rem;
+    background-color: #0d74e5;
+    color: #e7f4ff;
+    cursor: pointer;
+}
+
+#section_background, #section_background_2{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.background{
+    background-color: #000;
+    opacity: 0.65;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.sla2{
+    color: #0d74e5;
+}
+
+#section2
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding: 23px;
+    gap: 40px;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ong{
+    width: 80vw;
+    height: auto;
+    display: flex;
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+.ong_logo, .ong_perfil{
+    width: 20%;
+}
+
+.ong_logo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    background: #7bbbf9;
+    box-shadow: -5px 0px 25px -15px rgba(0,0,0,0.3) inset;
+}
+
+.ong_logo_img{
+    border-radius: 15px;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.ong_informations{
+    background: #a0d3ff;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.space1{   
+    bottom: 0;
+    padding: 1rem 0;
+}
+
+.space2{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.ong_informations_title{
+    font-size: 2rem;
+    border-bottom: 2px solid #7bbbf9;
+    color: #fff;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.ong_informations_local_content, .ong_informations_phone_content, .ong_informations_id_content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ong_informations_local_content a{
+    color: #fff;
+}
+
+#ong_informations_local_icon, #ong_informations_phone_icon, #ong_informations_id_icon{
+    font-size: 1.5rem;
+    color: #0d74e5;
+    background-color: #7bbbf9;
+    padding: 6px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.ong_informations_local_text, .ong_informations_phone_text, .ong_informations_id_text{
+    font-size: max(1vw, 20px);
+    color: #fff;
+}
+.ong_perfil{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 1rem;
+    background: #7bbbf9;
+    box-shadow: 5px 0px 25px -15px rgba(0,0,0,0.3) inset;
+}
+
+.ong_perfil_logo{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ong_perfil_logo_img{   
+    border-radius: 50%;
+    width: 100%;
+}
+
+.ong_perfil_arroba{
+    font-size: 1rem;
+    color: #fff;
+}
+
+.ong_perfil_link{
+    width: 80%;
+    background: #a0d3ff;
+    font-size: 1rem;
+    padding: 5px 8px;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: .2s;
+}
+
+.ong_perfil_link:hover{
+    border:  2px solid #fff;
+    background: transparent;
+    transition: .2s;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Inicio/style.css">
+    <link rel="shortcut icon" href="../emerG/assets/img/favicon_g1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>emerG - Localizar</title>
+</head>
+<body>
+    <header class="header solid" id="header">
+        <div class="header-items">
+            <div class="logos">
+                <a href="../Inicio/index.html" class="emerg-logo"><img src="../emerG/assets/img/logo_emerg-branca.png" alt="Logo da emerG"></a>
+                <a href="https://www.eteccarapicuiba.com.br/" target="_blank" class="etec-logo"><img src="../emerG/assets/img/logo_etec-branca.png" alt="Logo da Etec de Carapicuíba"></a>
+            </div>
+            <div class="links">
+            <ul class="links-list">
+                <li><a href="../Inicio/index.html" class="link">Início</a></li>
+                <li><a href="../Localizar/index.html" class="link active-link">Localizar</a></li>
+                <li><a href="../Ajudar/index.html" class="link">Ajudar</a></li>
+            </ul>  
+            </div>
+            <div class="login">
+            <a href="../Entrar/index.html" class="login-btn">Entrar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="section" id="section1">
+            <div class="choose">
+                <div class="choose_searchBarFilter" id="choose_searchBarFilter">
+                    <div class="choose_searchBarFilter_content" id="choose_searchBarFilter_content">
+                        <input type="text" class="choose_searchBarFilter_searchBar" onkeyup="filtrar()" id="searchBar"><span class="material-symbols-outlined" id="choose_searchBarFilter_searchBar_icon">search</span></input>
+                        
+                        <div class="choose_searchBarFilter_contentOptions" id="choose_searchBarFilter_contentOptions">
+                            <div class="contentOptions_options" id="contentOptions_options">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <span class="material-symbols-outlined choose_searchBarFilter_filter" id="choose_searchBarFilter_filter">filter_alt</span>
+                </div>
+
+                <button class="choose_buttonAddMarker" id="choose_buttonAddMarker">Adicionar marcador</button>
+            </div>
+            
+            <div class="map_content">
+                <div class="map_content_space" >
+                    <div class="map" id="map">
+                    </div>
+                    <div class="map" id="mapWater">
+                    </div>
+                </div>
+
+                <div class="change_map" id="switch_change_map">
+                    <div class="switch_content" id="switch_content">
+                        <div id="switch_circle"></div>
+                        <div id="switch_circle_shadowRight"></div>
+                        <div id="switch_circle_shadowLeft"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="section2">
+            
+        </section>
+
+        <section class="sections" id="section_background">
+            <div class="background"></div>
+
+            <div class="filterDiv" id="filterDiv">
+                <h1 class="filterText">Filtros</h1>
+                <form class="filterForms" id="filterForms">
+                    <span class="filterForms_closeButton" id="filterForms_closeButton"><i class="bi bi-x-circle"></i></span>
+
+                    <label for="input1" class="filterForms_Label">Nicho</label>
+                    <select type="text" name="inputNiche" id="inputNiche" placeholder="EX: ONGs sobre enchentes" class="filterForms_Input select_options">
+                        <option value="" class="options"></option>
+                        <option value="Ensino de qualidade" class="options">Ensino de qualidade</option>
+                        <option value="Saúde mental" class="options">Saúde mental</option>
+                        <option value="Cuidado de idosos" class="options">Cuidado de idosos</option>
+                        <option value="Ensino de qualidade especial" class="options">Ensino de qualidade especial</option>
+                        <option value="Ensino profissionalizante" class="options">Ensino profissionalizante</option>
+                        <option value="Cuidado de vulneráveis" class="options">Cuidado de vulneráveis</option>
+                        <option value="Luta contra o Câncer" class="options">Luta contra o Câncer</option>
+                        <option value="Cuidado de crianças" class="options">Cuidado de crianças</option>
+                    </select>
+                    <label for="input2" class="filterForms_Label">Região</label>
+                    <select type="text" name="inputRegion" id="inputRegion" placeholder="EX: Carapicuíba" class="filterForms_Input select_options">
+                        <option value=""></option>
+                        <option value="Carapicuíba">Carapicuíba</option>
+                        <option value="Osasco">Osasco</option>
+                        <option value="Barueri">Barueri</option>
+                        <option value="São Sebastião">São Sebastião</option>
+                        <option value="Adamantina">Adamantina</option>
+                    </select>
+                    <label for="input4" class="filterForms_Label">Classificação</label>
+                    <ul class="contentStars" id="contentStars">
+                        <li class="contentStars_star" id="1"></li>
+                        <li class="contentStars_star" id="2"></li>
+                        <li class="contentStars_star" id="3"></li>
+                        <li class="contentStars_star" id="4"></li>
+                        <li class="contentStars_star" id="5"></li>
+                    </ul>
+                    <div class="filterForms_buttons">
+                        <div class="formsButton" id="formsButtonSearch">Pesquisar</div>
+                        <div class="formsButton" id="formsButtonReset">Resetar</div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="sections" id="section_background_2">
+            <div class="background"></div>
+
+            <div class="formsAddMarker">
+                <div class="formsAddMarker_content_btnClose">
+                    <span class="formsAddMarker_btnClose" id="formsAddMarker_btnClose"><i class="bi bi-x-circle"></i></span>
+                </div>
+                <h1 class="formsAddMarker_title">Adicionando marcador</h1>
+                <div class="formsAddMarker_contentInput">
+                    <label for="formsAddMarker_inputAddrees" class="formsAddMarker_label">Endereço</label>
+                    <input type="text" class="formsAddMarker_input" onchange="inputs()" placeholder="Digite o endereço..." id="formsAddMarker_inputAddress" name="formsAddMarker_inputAddress">
+                    <label for="formsAddMarker_inputCity" class="formsAddMarker_label">Cidade</label>
+                    <input type="text" class="formsAddMarker_input" onchange="inputs()" id="formsAddMarker_inputCity" name="formsAddMarker_inputCity" disabled>
+                    <label for="formsAddMarker_inputAddreesFloodLevel" class="formsAddMarker_label" id="formsAddMarker_labelFloodLevel">Nível de perigo</label>
+                    <input type="range" min="0" max="3" value="0" class="formsAddMarker_input" onchange="inputs()" id="formsAddMarker_inputAddreesFloodLevel" name="formsAddMarker_inputAddreesFloodLevel">
+                </div>
+                <h1 class="miniMap_title">Prévia do novo marcador</h1>
+                <div class="miniMap_content">
+                    <div class="miniMap" id="miniMap"></div>
+                    <i id="formsAddMarker_CreateMiniMap" class="bi bi-eye-slash-fill formsAddMarker_icons"></i>
+                    <i id="formsAddMarker_ReloadMiniMap" class="bi bi-arrow-clockwise formsAddMarker_icons"></i>
+                </div>
+                <div class="nameAuthorization_content">
+                    <p class="nameAuthorization_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis numquam nesciunt accusamus magnam omnis distinctio quo, eaque in amet autem id tenetur. Tempore minima ex enim cumque quam accusantium porro?</p>
+
+                    <div class="nameAuthorization_content_contentInput">
+                        <div>
+                            <label for="nameAuthorization_inputYes" class="nameAuthorization_label">Eu autorizo</label>
+                            <input type="radio" id="nameAuthorization_inputYes" name="nameAuthorization_inputYes">
+                        </div>
+
+                        <div>
+                            <label for="" class="nameAuthorization_label">Eu não autorizo</label>
+                            <input type="radio" id="nameAuthorization_inputNo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btnAddNewMarker_content"><button  id="btnAddNewMarker">Criar Marcador</button></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="team-sec">
+                <ul class="team-list">
+                    <li class="member-tit">Time</li>
+                    <li class="member">Ana Souza</li>
+                    <li class="member">Erick Conrado</li>
+                    <li class="member">Felipe Prado</li>
+                    <li class="member">Giovanna Jesus</li>
+                    <li class="member">Isabella Jesus</li>
+                </ul>
+            </div>
+            <div class="map-sec">
+                <p class="map-tit">Mapa de Site</p>
+                <div class="map-list">
+                    <div class="list">
+                        <a href="../Inicio/index.html">Início</a>
+                        <ul>
+                            <li><a href="">Time</a></li>
+                            <li><a href="">Objetivos</a></li>
+                            <li><a href="">Valores</a></li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <a href="../Localizar/index.html">Localizar</a>
+                    </div>
+                    <div class="list">
+                        <a href="../Ajudar/index.html">Ajudar</a>
+                    </div>
+                    <div class="list">
+                        <a href="../Entrar/index.html">Entrar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-sec">
+                <p class="contact-tit">Contato</p>
+                <ul class="contact-icons">
+                    <li class="contact"><a href="https://instagram.com/emergoficial" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li class="contact"><a href="mailto:emergresponde@gmail.com?subject=Contato%20-%20emerG&body=Olá%2C%20quero%20falar%20sobre%20o%20projeto..."><i class="bi bi-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-span">
+                <span>Trabalho de Conclusão de Curso desenvolvido para a Etec de Carapicuíba sob a orientação do Professor Wesley Castanha.</span>
+            </div>
+    </footer>
+    <script src="../emerG/assets/js/header.js"></script>
+    <script src="script.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu1hZJ8YYYbhmnvSi7E-oJksxXAP0yv3k&libraries=places&callback=initMap&v=weekly"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>
