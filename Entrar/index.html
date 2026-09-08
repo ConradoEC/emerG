@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emerG - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../emerG/assets/css/style.css">
+    <link rel="shortcut icon" href="https://i.im.ge/2024/07/25/VHDea8.favicon-g1.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header solid" id="header">
+        <div class="header-items">
+            <div class="logos">
+                <a href="../Inicio/index.html" class="emerg-logo"><img src="../emerG/assets/img/logo_emerg-branca.png" alt="Logo da emerG"></a>
+                <a href="https://www.eteccarapicuiba.com.br/" target="_blank" class="etec-logo"><img src="../emerG/assets/img/logo_etec-branca.png" alt="Logo da Etec de Carapicuíba"></a>
+            </div>
+            <div class="links">
+              <ul class="links-list">
+                <li><a href="../Inicio/index.html" class="link">Início</a></li>
+                <li><a href="../Localizar/index.html" class="link">Localizar</a></li>
+                <li><a href="../Ajudar/index.html" class="link">Ajudar</a></li>
+            </ul>  
+            </div>
+            <div class="login">
+               <a href="../LoginCadastro/index.html" id="headerBtnLogin" class="login-btn">Entrar</a>
+               <div id="userImage"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="signup-body">
+            <div class="signup-container first">
+                <div class="signup-title">
+                    <h1>Tipo de perfil</h1>
+                </div>
+                <!-- <div class="signup-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div> -->
+                <div class="signup-form">
+                    <form action="">
+                        <label for="" class="label_input">CPF</label>
+                        <input type="text" placeholder="Insira seu CPF ou CNPJ..." class="input_forms" maxlength="14">
+                    </form>
+                </div>
+                <div class="signup-progress">
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                </div>
+                <div class="signup-btn">
+                    <button class="exit-btn" id="exit_btn"><i class="bi bi-box-arrow-left"></i>Sair</button>
+                    <button class="next-btn">Avançar<i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="signup-container">
+                <div class="signup-title">
+                    <h1>Dados essenciais</h1>
+                </div>
+                <!-- <div class="signup-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div> -->
+                <div class="signup-form">
+                    <form action="">
+                        <label for="" class="label_input">Nome</label>
+                        <input type="text" placeholder="Insira seu nome..." class="input_forms" required>
+                        <label for="" class="label_input">E-mail</label>
+                        <input type="email" placeholder="Insira seu melhor e-mail.." class="input_forms" required>
+                        <label for="" class="label_input">Telefone</label>
+                        <input type="phone" placeholder="+55 (XX) XXXXX-XXXX" class="input_forms" maxlength="19" required>
+                        <label for="" class="label_input">Senha</label>
+                        <input type="password" placeholder="Insira uma senha.." class="input_forms" required>
+                        <label for="" class="label_input">Confirmar senha</label>
+                        <input type="password" placeholder="Repita a senha..." class="input_forms" required>
+                    </form>
+                </div>
+                <div class="signup-progress">
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                </div>
+                <div class="signup-btn">
+                    <button class="back-btn"><i class="bi bi-arrow-left"></i>Voltar</button>
+                    <button class="next-btn">Avançar<i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="signup-container">
+                <div class="signup-title">
+                    <h1>Dados de endereço</h1>
+                </div>
+                <!-- <div class="signup-text">
+                    <p>As informações de endereço são necessárias para que as ongs possam localizar os doadores e voluntários</p>
+                </div> -->
+                <div class="signup-form">
+                    <form action="">
+                        <label for="" class="label_input">Endereço (indique o número também)</label>
+                        <input type="text" placeholder="Ex: Sua rua, número - Bairro, Cidade - Código UF, Brasil" class="input_forms" id="formsEndereco">
+                        <label for="" class="label_input">CEP</label>
+                        <input type="text" placeholder="Insira o CEP..." class="input_forms" id="formsCep" maxlength="9" disabled>
+                        <label for="" class="label_input">Cidade</label>
+                        <input type="text" placeholder="Auto-preenchido com o endereço" class="input_forms" disabled>
+                    </form>
+                    <div class="signup-map" id="signupMap"></div>
+                </div>
+                <div class="signup-progress">
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                </div>
+                <div class="signup-btn">
+                    <button class="back-btn"><i class="bi bi-arrow-left"></i>Voltar</button>
+                    <button class="next-btn">Avançar<i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="signup-container">
+                <div class="signup-title">
+                    <h1>Dados adicionais</h1>
+                </div>
+                <!-- <div class="signup-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div> -->
+                <div class="signup-form">
+                    <label for="input_signupImg" class="label_signupImg"><div class="signupImg" id="signupImg"></div></label>
+                    <input type="file" accept=".png" id="input_signupImg" name="input_signupImg"></input>
+                    <form action="">
+                        <label for="" class="label_input">Descrição</label>
+                        <textarea name="" placeholder="Faça uma descrição do seu perfil..." class="input_forms"></textarea>
+                        <label for="" class="label_input select_signup">Nicho</label>
+                        <select type="text" class="select_signup" id="select_signup">
+                            <option value=""></option>
+                        </select>
+                        <label for="" class="label_input select_signup">Conte-nos!</label>
+                        <input type="text" placeholder="Coloque o seu nicho!" class="input_forms select_signup" id="nicho_signup">
+                    </form>
+                </div>
+                <div class="signup-progress">
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                    <div class="progress-bubble"></div>
+                </div>
+                <div class="signup-btn">
+                    <button class="back-btn"><i class="bi bi-arrow-left"></i>Voltar</button>
+                    <button class="next-btn">Finalizar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="team-sec">
+                <ul class="team-list">
+                    <li class="member-tit">Time</li>
+                    <li class="member">Ana Souza</li>
+                    <li class="member">Erick Conrado</li>
+                    <li class="member">Felipe Prado</li>
+                    <li class="member">Giovanna Jesus</li>
+                    <li class="member">Isabella Jesus</li>
+                </ul>
+            </div>
+            <div class="map-sec">
+                <p class="map-tit">Mapa de Site</p>
+                <div class="map-list">
+                    <div class="list">
+                        <a href="../Inicio/index.html">Início</a>
+                        <ul>
+                            <li><a href="">Time</a></li>
+                            <li><a href="">Objetivos</a></li>
+                            <li><a href="">Valores</a></li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <a href="../Localizar/index.html">Localizar</a>
+                    </div>
+                    <div class="list">
+                        <a href="../Ajudar/index.html">Ajudar</a>
+                    </div>
+                    <div class="list">
+                        <a href="../Entrar/index.html">Entrar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-sec">
+                <p class="contact-tit">Contato</p>
+                <ul class="contact-icons">
+                    <li class="contact"><a href="https://instagram.com/emergoficial" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li class="contact"><a href="mailto:emergresponde@gmail.com?subject=Contato%20-%20emerG&body=Olá%2C%20quero%20falar%20sobre%20o%20projeto..."><i class="bi bi-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-span">
+                <span>Trabalho de Conclusão de Curso desenvolvido para a Etec de Carapicuíba sob a orientação do Professor Wesley Castanha.</span>
+            </div>
+    </footer>
+    
+    <script src="../emerG/assets/js/script.js"></script>
+    <script src="script.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu1hZJ8YYYbhmnvSi7E-oJksxXAP0yv3k&libraries=places&v=weekly"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>

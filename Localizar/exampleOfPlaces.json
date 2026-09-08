@@ -1,0 +1,48 @@
+[
+    {
+        "title": "Teste1",
+        "description": "Descrição do Teste1",
+        "icon": "parking_lot_maps.png",
+        "niche": "Cuidado de animais",
+        "id": 1
+    },
+
+    {
+        "position": {
+            "lat": -23.526252131932335,
+            "lng": -46.8537731287772,
+            "city": "Carapicuíba"
+        },
+        "title": "Teste2",
+        "description": "Descrição do Teste2",
+        "icon": "parking_lot_maps.png",
+        "niche": "Cuidado de animais",
+        "id": 2
+    },
+
+    {
+        "position": {
+            "lat": -23.515626633739842,
+            "lng": -46.85178702941456,
+            "city": "Osasco"
+        },
+        "title": "Parque shopping",
+        "description": "Localização do parque shopping",
+        "icon": "library_maps.png",
+        "niche": "Socorro de enchentes",
+        "id": 3
+    },
+
+    {
+        "position": {
+            "lat": -23.52560941530134,
+            "lng": -46.847500163025124,
+            "city": "Osasco"
+        },
+        "title": "Giga Atacado",
+        "description": "Muito bom para fazer compras",
+        "icon": "info-i_maps.png",
+        "niche": "Socorro de enchentes",
+        "id": 4
+    }
+]

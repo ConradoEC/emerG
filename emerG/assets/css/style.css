@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+}
+
+.header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background: #0d74e5;
+    z-index: 2;
+    transition: .2s;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.header .header-items{
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+.header .header-items .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 33.3%;
+}
+
+.header .header-items .links .links-list{
+    display: flex;
+    font-size: 1.2em;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .header-items .links .links-list .link{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.link.link-colored{
+    color: #0d74e5 !important;
+}
+
+.link.link-colored::after{
+    content: "";
+    background: #0d74e5;
+    height: 2px;
+    border-radius: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .2s;
+}
+
+.link::after{
+    content: "";
+    background: #fff;
+    height: 2px;
+    border-radius: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .2s;
+}
+
+.link:hover::after{
+    width: 100%
+}
+
+.active-link.active-colored::after{
+    content: "";
+    background: #0d74e5 !important;
+    height: 2px;
+    border-radius: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.active-link::after{
+    content: "";
+    background: #fff;
+    height: 2px;
+    border-radius: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.header .header-items .logos{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 33.3%;
+}
+
+.header .header-items .logos a{
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header .header-items .logos img{
+    height: 60px;
+}
+
+.header .header-items .logos .etec-logo{
+    transform: translateY(20%);
+    scale: 0.75;
+}
+
+.header .header-items .login{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    width: 33.3%;
+    padding-right: 15px;
+}
+
+.header .header-items .login .login-btn{
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    border-radius: 21px;
+    border: 2px solid #fff;
+    transition: .2s;
+    display: none;
+    cursor: pointer;
+    min-width: fit-content;
+}
+
+.login-btn.login-colored{
+    text-decoration: none;
+    color: #0d74e5 !important;
+    background: transparent;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    border-radius: 21px;
+    border: 2px solid #0d74e5 !important;
+    transition: .2s;
+}
+
+.login-btn.login-colored:hover{
+    background: #0d74e5 !important;
+    color: #fff !important;
+}
+
+#userImage{
+    height: 55px;
+    width: 55px;
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 100%;
+    display: none;
+    background-image: var(--UserImageCss);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.header .header-items .login .login-btn:hover{
+    background: #7bbbf9;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.header .header-items .login .active{
+    text-decoration: none;
+    display: none;
+    color: #fff;
+    background: #7bbbf9;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    border-radius: 21px;
+    border: 2px solid #7bbbf9;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.main{
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+.main .section{
+    width: 100%;
+}
+
+.main .first-sec{
+    position: relative;
+    width: 100%;
+    padding: 25px 0;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .first-sec .welcome-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+    user-select: none;
+}
+
+.main .first-sec .welcome-text p{
+    margin-bottom: 25px;
+    font-size: 3em;
+    font-weight: bolder;
+    color: #333;
+    z-index: 1;
+}
+
+.main .first-sec .welcome-text span{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    z-index: 1;
+}
+
+.main .first-sec .welcome-text .gradient-text{
+    background: linear-gradient(to top, #0d74e5, #e7f4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1em;
+}
+
+.main .second-sec{
+    background: #7bbbf9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+
+.main .second-sec::after{
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #7bbbf9;
+    clip-path: polygon(100% 0%, 0% 0% , 0.00% 54.90%, 1.00% 54.01%, 2.00% 53.22%, 3.00% 52.53%, 4.00% 51.95%, 5.00% 51.49%, 6.00% 51.14%, 7.00% 50.91%, 8.00% 50.81%, 9.00% 50.83%, 10.00% 50.97%, 11.00% 51.24%, 12.00% 51.63%, 13.00% 52.13%, 14.00% 52.75%, 15.00% 53.47%, 16.00% 54.30%, 17.00% 55.22%, 18.00% 56.22%, 19.00% 57.30%, 20.00% 58.44%, 21.00% 59.65%, 22.00% 60.89%, 23.00% 62.18%, 24.00% 63.48%, 25.00% 64.80%, 26.00% 66.12%, 27.00% 67.42%, 28.00% 68.71%, 29.00% 69.95%, 30.00% 71.16%, 31.00% 72.30%, 32.00% 73.38%, 33.00% 74.38%, 34.00% 75.30%, 35.00% 76.13%, 36.00% 76.85%, 37.00% 77.47%, 38.00% 77.97%, 39.00% 78.36%, 40.00% 78.63%, 41.00% 78.77%, 42.00% 78.79%, 43.00% 78.69%, 44.00% 78.46%, 45.00% 78.11%, 46.00% 77.65%, 47.00% 77.07%, 48.00% 76.38%, 49.00% 75.59%, 50.00% 74.70%, 51.00% 73.72%, 52.00% 72.67%, 53.00% 71.54%, 54.00% 70.36%, 55.00% 69.13%, 56.00% 67.85%, 57.00% 66.55%, 58.00% 65.24%, 59.00% 63.92%, 60.00% 62.61%, 61.00% 61.32%, 62.00% 60.06%, 63.00% 58.84%, 64.00% 57.67%, 65.00% 56.57%, 66.00% 55.54%, 67.00% 54.59%, 68.00% 53.74%, 69.00% 52.98%, 70.00% 52.33%, 71.00% 51.78%, 72.00% 51.36%, 73.00% 51.05%, 74.00% 50.86%, 75.00% 50.80%, 76.00% 50.86%, 77.00% 51.05%, 78.00% 51.36%, 79.00% 51.78%, 80.00% 52.33%, 81.00% 52.98%, 82.00% 53.74%, 83.00% 54.59%, 84.00% 55.54%, 85.00% 56.57%, 86.00% 57.67%, 87.00% 58.84%, 88.00% 60.06%, 89.00% 61.32%, 90.00% 62.61%, 91.00% 63.92%, 92.00% 65.24%, 93.00% 66.55%, 94.00% 67.85%, 95.00% 69.13%, 96.00% 70.36%, 97.00% 71.54%, 98.00% 72.67%, 99.00% 73.72%, 100.00% 74.70%);
+}
+
+.main .second-sec::before{
+    content: '';
+    position: absolute;
+    top: -26%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #7bbbf9;
+    clip-path: polygon(100% 100%, 0% 100% , 0.00% 76.27%, 1.00% 77.06%, 2.00% 77.71%, 3.00% 78.21%, 4.00% 78.56%, 5.00% 78.76%, 6.00% 78.79%, 7.00% 78.67%, 8.00% 78.39%, 9.00% 77.95%, 10.00% 77.36%, 11.00% 76.63%, 12.00% 75.77%, 13.00% 74.78%, 14.00% 73.67%, 15.00% 72.47%, 16.00% 71.17%, 17.00% 69.81%, 18.00% 68.39%, 19.00% 66.92%, 20.00% 65.44%, 21.00% 63.94%, 22.00% 62.46%, 23.00% 61.00%, 24.00% 59.58%, 25.00% 58.23%, 26.00% 56.95%, 27.00% 55.76%, 28.00% 54.67%, 29.00% 53.70%, 30.00% 52.85%, 31.00% 52.14%, 32.00% 51.58%, 33.00% 51.16%, 34.00% 50.90%, 35.00% 50.80%, 36.00% 50.86%, 37.00% 51.08%, 38.00% 51.45%, 39.00% 51.98%, 40.00% 52.65%, 41.00% 53.46%, 42.00% 54.40%, 43.00% 55.46%, 44.00% 56.63%, 45.00% 57.88%, 46.00% 59.22%, 47.00% 60.62%, 48.00% 62.07%, 49.00% 63.55%, 50.00% 65.04%, 51.00% 66.54%, 52.00% 68.01%, 53.00% 69.44%, 54.00% 70.82%, 55.00% 72.14%, 56.00% 73.37%, 57.00% 74.50%, 58.00% 75.52%, 59.00% 76.42%, 60.00% 77.18%, 61.00% 77.81%, 62.00% 78.29%, 63.00% 78.61%, 64.00% 78.78%, 65.00% 78.78%, 66.00% 78.63%, 67.00% 78.32%, 68.00% 77.86%, 69.00% 77.24%, 70.00% 76.49%, 71.00% 75.60%, 72.00% 74.59%, 73.00% 73.47%, 74.00% 72.24%, 75.00% 70.94%, 76.00% 69.56%, 77.00% 68.13%, 78.00% 66.66%, 79.00% 65.17%, 80.00% 63.68%, 81.00% 62.20%, 82.00% 60.74%, 83.00% 59.34%, 84.00% 58.00%, 85.00% 56.73%, 86.00% 55.56%, 87.00% 54.49%, 88.00% 53.54%, 89.00% 52.71%, 90.00% 52.03%, 91.00% 51.49%, 92.00% 51.10%, 93.00% 50.87%, 94.00% 50.80%, 95.00% 50.89%, 96.00% 51.13%, 97.00% 51.53%, 98.00% 52.09%, 99.00% 52.78%, 100.00% 53.62%);
+}
+
+.main .second-sec .team-cards{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background: transparent;
+    padding-bottom: 30px;
+}
+
+.main .second-sec .team-cards i{
+    font-size: 5em;
+    color: #fff;
+    background: radial-gradient(circle, rgba(13,116,229,1) 0%, rgba(62,154,255,1) 100%);
+    padding: 15.5px 28px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    
+}
+
+.main .second-sec .team-cards .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 250px;
+    height: 350px;
+    justify-content: space-between;
+}
+
+.main .second-sec .team-cards .card .card-icon{
+    transform: translateY(-50%);
+    height: 90px;
+}
+
+.main .second-sec .team-cards .card .card-content{
+    background: #7bbbf9;
+    text-align: center;
+    height: 30%;
+    font-size: 1em;
+    user-select: none;
+}
+
+.main .second-sec .team-cards .card .card-title{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+.main .second-sec .team-cards .card .card-text{
+    text-align: center;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.main .second-sec .team-cards .card .card-btn{
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.main .second-sec .team-cards .card .card-btn a{
+    text-decoration: none;
+    color: #fff;
+    background: #0d74e5;
+    font-size: 1.25em;
+    padding: 5px 21px;
+    border-radius: 22px;
+    border: 2px solid transparent;
+    transition: .2s;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.main .second-sec .team-cards .card .card-btn a:hover{
+    border: 2px solid #fff;
+    background: transparent;
+}
+
+.main .third-sec{
+    display: flex;
+    padding: 80px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.main .third-sec .loc-text h2{
+    font-size: 50px;
+    padding-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.main .third-sec .loc-btn{
+    padding: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.main .third-sec .loc-btn a{
+    text-decoration: none;
+    padding: 20px 45px;
+    font-size: 50px;
+    background: #0d74e5;
+    color: #fff;
+    border-radius: 55px;
+    user-select: none;
+    font-weight: bolder;
+    border: 2px solid transparent;
+    transition: .4s;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.main .third-sec .loc-btn a:hover{
+    border: 2px solid #0d74e5;
+    color: #0d74e5;
+    background: transparent;
+    transition: .2s;
+}
+
+@keyframes bounce{
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(0.9);
+    }
+}
+
+.main .fourth-sec{
+    padding: 25px 0;
+    height: 80vh;
+    background: #7bbbf9;
+    position: relative;
+}
+
+.fourth-sec::before{
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #7bbbf9;
+    clip-path: polygon(100% 100%, 0% 100% , 0.00% 45.95%, 1.00% 45.12%, 2.00% 44.51%, 3.00% 44.14%, 4.00% 44.00%, 5.00% 44.10%, 6.00% 44.43%, 7.00% 45.00%, 8.00% 45.79%, 9.00% 46.80%, 10.00% 48.02%, 11.00% 49.42%, 12.00% 51.00%, 13.00% 52.74%, 14.00% 54.61%, 15.00% 56.61%, 16.00% 58.69%, 17.00% 60.85%, 18.00% 63.05%, 19.00% 65.26%, 20.00% 67.48%, 21.00% 69.66%, 22.00% 71.79%, 23.00% 73.84%, 24.00% 75.79%, 25.00% 77.61%, 26.00% 79.28%, 27.00% 80.79%, 28.00% 82.12%, 29.00% 83.25%, 30.00% 84.17%, 31.00% 84.86%, 32.00% 85.33%, 33.00% 85.57%, 34.00% 85.57%, 35.00% 85.33%, 36.00% 84.86%, 37.00% 84.16%, 38.00% 83.24%, 39.00% 82.11%, 40.00% 80.78%, 41.00% 79.27%, 42.00% 77.59%, 43.00% 75.77%, 44.00% 73.83%, 45.00% 71.78%, 46.00% 69.65%, 47.00% 67.46%, 48.00% 65.25%, 49.00% 63.03%, 50.00% 60.83%, 51.00% 58.68%, 52.00% 56.59%, 53.00% 54.60%, 54.00% 52.73%, 55.00% 50.99%, 56.00% 49.41%, 57.00% 48.01%, 58.00% 46.79%, 59.00% 45.79%, 60.00% 45.00%, 61.00% 44.43%, 62.00% 44.10%, 63.00% 44.00%, 64.00% 44.14%, 65.00% 44.52%, 66.00% 45.12%, 67.00% 45.95%, 68.00% 47.00%, 69.00% 48.25%, 70.00% 49.69%, 71.00% 51.30%, 72.00% 53.06%, 73.00% 54.96%, 74.00% 56.97%, 75.00% 59.07%, 76.00% 61.23%, 77.00% 63.44%, 78.00% 65.66%, 79.00% 67.87%, 80.00% 70.04%, 81.00% 72.16%, 82.00% 74.19%, 83.00% 76.12%, 84.00% 77.91%, 85.00% 79.56%, 86.00% 81.04%, 87.00% 82.33%, 88.00% 83.42%, 89.00% 84.31%, 90.00% 84.96%, 91.00% 85.39%, 92.00% 85.59%, 93.00% 85.55%, 94.00% 85.27%, 95.00% 84.75%, 96.00% 84.01%, 97.00% 83.06%, 98.00% 81.89%, 99.00% 80.53%, 100.00% 78.99%);
+}
+
+.main .fourth-sec .help-sec{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    gap: 50px;
+}
+
+.main .fourth-sec .help-sec .help-pic img{
+    height: 100%;
+    width: 400px;
+    scale: 0.75;
+}
+
+.main .fourth-sec .help-sec .help-content{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 475px;
+}
+
+.main .fourth-sec .help-sec .help-content .help-title{
+    padding-bottom: 25px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.main .fourth-sec .help-sec .help-content .help-text{
+    width: 100%;
+    text-align: justify;
+    padding-bottom: 50px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.main .fourth-sec .help-sec .help-content .help-btn{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.main .fourth-sec .help-sec .help-content .help-btn a{
+    text-decoration: none;
+    padding: 20px 100px;
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    font-weight: bolder;
+    border-radius: 44px;
+    background: #0d74e5;
+    border: 2px solid transparent;
+    transition: .4s;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.main .fourth-sec .help-sec .help-content .help-btn a:hover{
+    background: transparent;
+    transition: .2s;
+    border: 2px solid #fff;
+}
+
+.footer{
+    background: #0d74e5;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer .footer-content{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.member-tit, .map-tit, .contact-tit{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+}
+
+.footer .footer-content .team-sec{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer .footer-content .team-sec .team-list{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .footer-content .map-sec{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .footer-content .map-sec .map-list{
+    display: flex;
+    gap: 30px;
+}
+
+.footer .footer-content .map-sec .map-list a{
+    color: #fff;
+    transition: .2s;
+    text-decoration: none;
+}
+
+.footer .footer-content .map-sec .map-list .list{
+    font-weight: bold;
+}
+
+.footer .footer-content .map-sec .map-list .list ul li > a{
+    font-weight: normal !important;
+}
+
+.footer .footer-content .map-sec .map-list a:hover{
+    color: #7bbbf9;
+    text-decoration: underline;
+}
+
+.footer .footer-content .contact-sec{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .footer-content .contact-sec .contact-icons{
+    display: flex;
+    gap: 1vw;
+}
+
+.footer .footer-content .contact-sec .contact-icons .contact{
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+.footer .footer-content .contact-sec .contact-icons .contact i{
+    color: #fff;
+    transition: .2s;
+}
+
+.footer .footer-content .contact-sec .contact-icons .contact i:hover{
+    color: #7bbbf9;
+}
+
+.footer .footer-span{
+    width: 90%;
+    color: #fff;
+    padding: 10px 0px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    align-self: center;
+    border-top: 1px solid #fff;
+}

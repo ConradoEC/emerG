@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emerG - Entrar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../emerG/assets/css/style.css">
+    <link rel="shortcut icon" href="https://i.im.ge/2024/07/25/VHDea8.favicon-g1.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header solid" id="header">
+        <div class="header-items">
+            <div class="logos">
+                <a href="../Inicio/index.html" class="emerg-logo"><img src="../emerG/assets/img/logo_emerg-branca.png" alt="Logo da emerG"></a>
+                <a href="https://www.eteccarapicuiba.com.br/" target="_blank" class="etec-logo"><img src="../emerG/assets/img/logo_etec-branca.png" alt="Logo da Etec de Carapicuíba"></a>
+            </div>
+            <div class="links">
+              <ul class="links-list">
+                <li><a href="../Inicio/index.html" class="link">Início</a></li>
+                <li><a href="../Localizar/index.html" class="link">Localizar</a></li>
+                <li><a href="../Ajudar/index.html" class="link">Ajudar</a></li>
+            </ul>  
+            </div>
+            <div class="login">
+               <a href="../LoginCadastro/index.html" id="headerBtnLogin" class="active">Entrar</a>
+               <div id="userImage"></div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="container">
+            <div class="content first-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Bem-vindo de volta!</h2>
+                    <p class="description description-primary">Mantenha-se conectado, entre com suas informações.</p>
+                    <a id="signin" class="btn btn-primary">Entrar</a>
+                </div>    
+                <div class="second-column">
+                    <h2 class="title title-second showing">Olá, emergente.</h2>
+                    <p class="description description-primary showing">Insira suas informações e se junte a comunidade emerG.</p>
+                    <button id="btnCadastro" class="btn btn-second showing">Cadastrar</button>
+                    <h2 class="title title-second hidden">Vamos começar?</h2>
+                    <p class="description description-primary hidden">Escolha qual tipo de conta você deseja ter</p>
+                    <a href="../Entrar/?type=business" class="btn btn-second hidden">Pessoa jurídica (ongs)</a>
+                    <a href="../Entrar/?type=personal" class="btn btn-second hidden">Pessoa física (usuário)</a>
+                </div>
+            </div>
+            <div class="content second-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Olá, emergente.</h2>
+                    <p class="description description-primary">Insira suas informações e venha emergir com a gente.</p>
+                    <a id="signup" class="btn btn-primary">Cadastrar</a>
+                </div>
+                <div class="second-column">
+                    <h2 class="title title-second">Bem-vindo de volta!</h2>
+
+                    <h4 id="notLoginAlert">E-mail ou senha incorreta</h4>
+
+                    <form class="form-login">
+                    
+                        <label class="label-input" for="">
+                            <i class="bi bi-envelope icon-modify"></i>
+                            <input type="email" id="emailUser" placeholder="Email">
+                        </label>
+                    
+                        <label class="label-input" for="">
+                            <i class="bi bi-key icon-modify"></i>
+                            <input type="password" id="senhaUser" placeholder="Senha...">
+                        </label>
+                    
+                        <!-- <a class="password" href="#">Esqueceu sua senha?</a> -->
+                        <a class="btn btn-second" id="btnEntrar">Entrar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="team-sec">
+                <ul class="team-list">
+                    <li class="member-tit">Time</li>
+                    <li class="member">Ana Souza</li>
+                    <li class="member">Erick Conrado</li>
+                    <li class="member">Felipe Prado</li>
+                    <li class="member">Giovanna Jesus</li>
+                    <li class="member">Isabella Jesus</li>
+                </ul>
+            </div>
+            <div class="map-sec">
+                <p class="map-tit">Mapa de Site</p>
+                <div class="map-list">
+                    <div class="list">
+                        <a href="../Inicio/index.html">Início</a>
+                        <ul>
+                            <li><a href="">Time</a></li>
+                            <li><a href="">Objetivos</a></li>
+                            <li><a href="">Valores</a></li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <a href="../Localizar/index.html">Localizar</a>
+                    </div>
+                    <div class="list">
+                        <a href="../Ajudar/index.html">Ajudar</a>
+                    </div>
+                    <div class="list">
+                        <a href="../Entrar/index.html">Entrar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-sec">
+                <p class="contact-tit">Contato</p>
+                <ul class="contact-icons">
+                    <li class="contact"><a href="https://instagram.com/emergoficial" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li class="contact"><a href="mailto:emergresponde@gmail.com?subject=Contato%20-%20emerG&body=Olá%2C%20quero%20falar%20sobre%20o%20projeto..."><i class="bi bi-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-span">
+                <span>Trabalho de Conclusão de Curso desenvolvido para a Etec de Carapicuíba sob a orientação do Professor Wesley Castanha.</span>
+            </div>
+    </footer>
+    
+    <script src="../emerG/assets/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

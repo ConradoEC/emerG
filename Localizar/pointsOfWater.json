@@ -1,0 +1,28 @@
+[
+    {
+        "id_flood": 1,
+        "address": "sla1",
+        "name": "Carapicuíba",
+        "floodLevel": 1,
+        "lat": -23.507471500000000,
+        "lng": -46.255168925492804
+    },
+
+    {
+        "id_flood": 2,
+        "address": "sla2",
+        "name": "Barueri",
+        "floodLevel": 2,
+        "lat": -23.526252131932335,
+        "lng": -46.8537731287772
+    },
+    
+    {
+        "id_flood": 3,
+        "address": "sla3",
+        "name": "Osasco",
+        "floodLevel": 3,
+        "lat": -23.515626633739842,
+        "lng": -46.85178702941456
+    }
+]
